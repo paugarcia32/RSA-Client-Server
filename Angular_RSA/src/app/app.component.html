@@ -1,0 +1,67 @@
+<main>
+  <form [formGroup]="encryptForm" (submit)="encryptMessage()">
+    <label for="messageToEncrypt">Message to Encrypt:</label>
+    <input id="messageToEncrypt" type="text" formControlName="messageToEncrypt">
+    <button type="submit" class="primary">Encrypt 😞🤙</button>
+  </form>
+  <div>
+    <p>Encrypted Message: {{ encryptResponse }}</p>
+  </div>
+  <form [formGroup]="signForm" (submit)="signMessage()">
+    <label for="signMessage">Message to Sign:</label>
+    <input id="signMessage" type="text" formControlName="signMessage">
+    <button type="submit" class="primary">Sign 🫥</button>
+  </form>
+  <div>
+    <p>Status Sign: {{ signStatus }}</p>
+  </div>
+  <div>
+    <button (click)="sendGetSecret()">Get Secret</button>
+  </div>
+  <div *ngIf="arrayOfItems">
+    <h2>Slices from Secret</h2>
+    <div *ngIf="secretShamir">
+      <p>Clave completa: {{ secretShamir }}</p>
+    </div>
+    <div *ngFor="let item of arrayOfItems; let i = index" class="box">
+      <!-- Adjust the class and style based on your requirements -->
+      <p>Slice {{ i + 1 }}: {{ item }}</p>
+    </div>
+  </div>
+  <div>
+    <h2>Input Strings</h2>
+    <form [formGroup]="inputForm" (submit)="submitInputStrings()">
+      <label for="input1">Input 1:</label>
+      <input id="input1" type="text" formControlName="input1">
+  
+      <label for="input2">Input 2:</label>
+      <input id="input2" type="text" formControlName="input2">
+  
+      <label for="input3">Input 3:</label>
+      <input id="input3" type="text" formControlName="input3">
+  
+      <label for="input4">Input 4:</label>
+      <input id="input4" type="text" formControlName="input4">
+  
+      <label for="input5">Input 5:</label>
+      <input id="input5" type="text" formControlName="input5">
+  
+      <label for="input6">Input 6:</label>
+      <input id="input6" type="text" formControlName="input6">
+  
+      <label for="input7">Input 7:</label>
+      <input id="input7" type="text" formControlName="input7">
+  
+      <label for="input8">Input 8:</label>
+      <input id="input8" type="text" formControlName="input8">
+  
+      <label for="input9">Input 9:</label>
+      <input id="input9" type="text" formControlName="input9">
+  
+      <label for="input10">Input 10:</label>
+      <input id="input10" type="text" formControlName="input10">
+      
+      <button type="submit">Submit Input Strings</button>
+    </form>
+  </div>
+</main>
